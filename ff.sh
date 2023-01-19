@@ -34,9 +34,9 @@ if [[ $4 = 'all' ]]; then
 fi
 
 if [[ $4 = 'mic' ]]; then
-    ffmpeg -y -i 1.mp4 -ss 00:00:00 -to 00:00:05 -c:v copy -c:a aac -b:a 192k -map 0 -map -0:a:0 output.mp4
+    ffmpeg -y -i $1 -ss $2 -to $3 -c:v copy -c:a aac -b:a 192k -map 0 -map -0:a:0 output.mp4
 fi
 
 if [[ $4 = 'game' ]]; then
-    ffmpeg -y -i 1.mp4 -ss 00:00:00 -to 00:00:05 -c:v copy -c:a aac -b:a 192k -map 0 -map -0:a:1 output.mp4
+    ffmpeg -y -i $1 -ss $2 -to $3 -c:v copy -c:a aac -b:a 192k -map 0 -map -0:a:1 output.mp4
 fi
